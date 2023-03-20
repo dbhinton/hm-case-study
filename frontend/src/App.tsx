@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Dashboard from './components/Dashboard';
 import { getOrderCountByHour } from './utils/api';
-import { styled } from '@mui/material/styles';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import { fabClasses } from '@mui/material';
+import { styled, List, ListItem, ListItemText, Link } from '@mui/material/';
+import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import Table from './components/Table'
 
 const Root = styled('div')({
   display: 'flex',
@@ -27,7 +25,7 @@ const DrawerHeader = styled('div')({
 });
 
 const SideMenuContainer = styled('div')({
-  width: 240, // set a fixed width for the sidemenu
+  width: 180, // set a fixed width for the sidemenu
   backgroundColor: '#f1f5f7'
 });
 
@@ -54,10 +52,10 @@ const SideMenu = () => {
       </DrawerHeader>
       <SideMenuList>
         <SideMenuItem button={false}>
-          <SideMenuItemText primary="Home" />
+        <Link href='/'><SideMenuItemText primary="Home" /></Link>
         </SideMenuItem>
         <SideMenuItem button={false}>
-          <SideMenuItemText primary="Raw Data" />
+          <Link href='/table'><SideMenuItemText primary="Raw Data" /></Link>
         </SideMenuItem>
         {/* Add more menu items here */}
       </SideMenuList>
@@ -76,18 +74,25 @@ function App() {
     };
     fetchData();
   }, []);
-  
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
   return (
-    <Root>
-      <SideMenu />
-      <AppContent>
-        <Dashboard data={data} toggleDrawer={toggleDrawer} />
-      </AppContent>
-    </Root>
+    <>
+      <Router>
+        <Root>
+          <SideMenu />
+          <AppContent>
+            <Routes>
+              <Route path="/" element={<Dashboard data={data} toggleDrawer={toggleDrawer} />} />
+              <Route path="/table" element={<Table />} />
+            </Routes>
+          </AppContent>
+        </Root>
+      </Router>
+    </>
   );
 }
 

@@ -16,6 +16,20 @@ class DriveThruOrderView(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'])
 
+    def average_wait_time_by_store_id(self, request):
+            # group orders by store_id and return the average wait time for each store
+        data = self.queryset.values('store_id').annotate(avg_wait_time=Avg('total_time') - Avg('order_time') - Avg('pickup_time'))
+
+        # return the data as a JSON response
+        return Response(data)
+
+    def average_total_time_by_store_id(self, request):
+            # group orders by store_id and return the average total_time for each store
+            data = self.queryset.values('store_id').annotate(avg_total_time=Avg('total_time'))
+
+            # return the data as a JSON response
+            return Response(data)
+
     def generate_drive_thru_scatterplot(self, request):
         orders = DriveThruOrder.objects.all().order_by('arrival_time')
 
@@ -29,26 +43,19 @@ class DriveThruOrderView(viewsets.ModelViewSet):
 
         return Response(data)
 
-    def average_order_time(self, request):
-        # perform the aggregation
-        average_order_time = self.queryset.aggregate(avg_order_time=Avg('order_time'))
+    def generate_pickup_order_time_scatterplot(self, request):
+        orders = DriveThruOrder.objects.all()
 
-        # return the average  order time as a response
-        return Response(average_order_time)
+        data = {
+            'x': [o.pickup_time for o in orders],
+            'y': [o.order_time for o in orders],
+            'mode': 'markers',
+            'marker': {'color': 'blue', 'size': 10},
+            'type': 'scatter'
+        }
 
-    def average_pickup_time(self, request):
-        # perform the aggregation
-        average_pickup_time = self.queryset.aggregate(avg_pickup_time=Avg('pickup_time'))
+        return Response(data)
 
-        # return the average pickup time as a response
-        return Response(average_pickup_time)
-
-    def average_total_time(self, request):
-        # perform the aggregation
-        average_total_time = self.queryset.aggregate(avg_total_time=Avg('total_time'))
-
-        # return the average time as a response
-        return Response(average_total_time)
 
     def order_count_by_hour(self, request):
         # group orders by hour of arrival_time and return the count

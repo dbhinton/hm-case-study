@@ -29,6 +29,7 @@ function DrivethruScatterPlot() {
         title: 'Drive-Thru Time vs. Arrival Time',
         xaxis: { title: 'Arrival Time' },
         yaxis: { title: 'Drive-Thru Time' },
+        autosize: true,
       }}
     />
   );

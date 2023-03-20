@@ -5,6 +5,9 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import OrderTimeByHour from './OrderCountByHour';
 import DriveThruScatterplot from './DriveThruScatterplot'
+import AverageTotalTimeByStoreIdChart from './AverageTotalTimeByStoreIdChart'
+import OrderPickupTimeChart from './OrderPickupTimeChart'
+import AverageWaitTimeByStoreIdChart from './AverageWaitTimeByStoreIdChart'
 
 interface DashboardProps {
   data: {
@@ -39,14 +42,25 @@ const Dashboard = ({ data }: DashboardProps) => {
             {/* Add your Drive-Thru Times component here */}
           </Section>
         </Grid>
-        <Grid item xs={12} md={8}>
-          <Section>
-            <OrderTimeByHour data={data} />
+
+        <Grid item xs={12} md={6}>
+        <Section>
+            <AverageTotalTimeByStoreIdChart />
           </Section>
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={6}>
+          <Section>
+          <AverageWaitTimeByStoreIdChart />
+          </Section>
+        </Grid>
+        <Grid item xs={12}>
           <Section>
             <DriveThruScatterplot />
+          </Section>
+        </Grid>
+        <Grid item xs={12}>
+          <Section>
+          <OrderTimeByHour data={data} />
           </Section>
         </Grid>
       </Grid>
