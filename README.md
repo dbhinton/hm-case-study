@@ -33,7 +33,14 @@ This view provides the following endpoints:
 
 ## Conclusion
 Some of the things I noticed about the data was: 
-- Store 1501142 and 1501144 have identical data. I would be curious to know more about why that is. My inital thought is that it's an error, so I would probably not use this as I think it may be unreliable, and lead to incorrect conclusions/analysis.
-- I was interested to know what the relationship was betwen order time and pickup time so I made a scatterplot illustrating that. Overall there seems to be a moderate pattern in how long one spends ordering and picking up an order. I would be curious to abo
+- Store 1501142 and 1501144 have identical data. I would be curious to know more about why that is. My inital thought is that it's an error, so I would probably not use this as I think it may be unreliable, and lead to incorrect conclusions/analysis. As you can see below the avg total time and wait time for each store are identical.
+![alt-text](https://i.imgur.com/gfXWVnz.png)
+- I was interested to know what the relationship was betwen order time and pickup time so I made a scatterplot illustrating that. Overall there seems to be a moderate pattern in how long one spends ordering and picking up an order. 
+![alt-text](https://i.imgur.com/iGYucbH.png)
 - The Count of Orders by Hour chart shows that there is a high concentration of orders between 6AM and 9AM which tells me that a lot of people go to this restaurant before work. This insinuates to me that this place serves breakfast. I would be interested to know what days have the highest customer counts. 
+![alt-text](https://i.imgur.com/JUVdwST.png)
+
+
+
+
 
