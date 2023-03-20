@@ -11,9 +11,10 @@ Download necessary csv's and save them somewhere you can find them.
 ### To run this project on your local machine, follow these steps:
 - Clone this repository to your local machine.
 - Open a terminal window and navigate to the project directory.
-- Enter `docker compose-up`
-- Enter `cd backend`
-- Run `python manage.py loadcsv {path of csv file}`. Check logs to ensure data is properly loaded
+- Run `make build-frontend && make build-backend`
+- Run `docker compose-up`
+- Run `cd backend`
+- Run mgmt command `python manage.py loadcsv {path of csv file}`. Check logs to ensure data is properly loaded
 - Repeat the step above for 3 other csv's
 - In a web browser, go to http://localhost:3000 to view the appliciation.
 
@@ -28,4 +29,11 @@ __average_total_time_by_store_id__: returns the average total time for each stor
 __generate_drive_thru_scatterplot__: generates a scatter plot of arrival time vs total time for all orders.
 __generate_pickup_order_time_scatterplot__: generates a scatter plot of pickup time vs order time for all orders.
 __order_count_by_hour__: returns the count of orders by hour of arrival time.
+
+
+## Conclusion
+Some of the things I noticed about the data was: 
+- Store 1501142 and 1501144 have identical data. I would be curious to know more about why that is. My inital thought is that it's an error, so I would probably not use this as I think it may be unreliable, and lead to incorrect conclusions/analysis.
+- I was interested to know what the relationship was betwen order time and pickup time so I made a scatterplot illustrating that. Overall there seems to be a moderate pattern in how long one spends ordering and picking up an order. I would be curious to abo
+- The Count of Orders by Hour chart shows that there is a high concentration of orders between 6AM and 9AM which tells me that a lot of people go to this restaurant before work. This insinuates to me that this place serves breakfast. I would be interested to know what days have the highest customer counts. 
 
