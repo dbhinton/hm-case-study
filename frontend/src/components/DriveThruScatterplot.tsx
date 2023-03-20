@@ -4,16 +4,20 @@ import Plot from 'react-plotly.js';
 
 function DrivethruScatterPlot() {
   const [data, setData] = useState({ x: [], y: [] });
-
+  
+  // Fetch data from API using useEffect hook
   useEffect(() => {
     const fetchData = async () => {
+      // Make GET request to API endpoint using axios library
       const result = await axios.get('http://localhost:8000/drivethru-scatterplot/');
       console.log(result)
+      // Set state with response data
       setData(result.data);
     };
     fetchData();
   }, []);
-
+  
+  // Render Plotly bar chart with x and y values
   return (
     <Plot
       data={[

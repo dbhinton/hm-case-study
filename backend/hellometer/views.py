@@ -31,29 +31,37 @@ class DriveThruOrderView(viewsets.ModelViewSet):
             return Response(data)
 
     def generate_drive_thru_scatterplot(self, request):
+        # Retrieve all DriveThruOrder objects and order them by arrival time
         orders = DriveThruOrder.objects.all().order_by('arrival_time')
 
+        # Create a dictionary containing the x and y data for the scatter plot,
+        # as well as the scatter plot settings
         data = {
-            'x': [o.arrival_time for o in orders],
-            'y': [o.total_time for o in orders],
-            'mode': 'markers',
-            'marker': {'color': 'blue', 'size': 10},
-            'type': 'scatter'
+            'x': [o.arrival_time for o in orders],  # x-axis data is arrival time for each order
+            'y': [o.total_time for o in orders],    # y-axis data is total time for each order
+            'mode': 'markers',                      # scatter plot mode is markers
+            'marker': {'color': 'blue', 'size': 10},# markers are blue with size 10
+            'type': 'scatter'                       # plot type is scatter
         }
 
+        # Return the data as a Response object
         return Response(data)
 
     def generate_pickup_order_time_scatterplot(self, request):
+        # Retrieve all DriveThruOrder objects
         orders = DriveThruOrder.objects.all()
 
+        # Create a dictionary containing the x and y data for the scatter plot,
+        # as well as the scatter plot settings
         data = {
-            'x': [o.pickup_time for o in orders],
-            'y': [o.order_time for o in orders],
-            'mode': 'markers',
-            'marker': {'color': 'blue', 'size': 10},
-            'type': 'scatter'
+            'x': [o.pickup_time for o in orders],  # x-axis data is pickup time for each order
+            'y': [o.order_time for o in orders],   # y-axis data is order time for each order
+            'mode': 'markers',                     # scatter plot mode is markers
+            'marker': {'color': 'blue', 'size': 10},# markers are blue with size 10
+            'type': 'scatter'                      # plot type is scatter
         }
 
+        # Return the data as a Response object
         return Response(data)
 
 

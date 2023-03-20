@@ -51,14 +51,15 @@ const Dashboard = ({ toggleDrawer }: DashboardProps) => {
         </Grid>
         <Grid item xs={12}>
           <Section>
-            <DriveThruScatterplot />
+          <OrderTimeByHour />
           </Section>
         </Grid>
         <Grid item xs={12}>
           <Section>
-          <OrderTimeByHour />
+            <DriveThruScatterplot />
           </Section>
         </Grid>
+
         <Grid item xs={12}>
           <Section>
           <OrderPickupTimeScatterplot />
