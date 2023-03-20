@@ -31,7 +31,7 @@ This view provides the following endpoints:
 - __order_count_by_hour__: returns the count of orders by hour of arrival time.
 
 
-## Conclusion
+## Analysis
 Some of the things I noticed about the data was: 
 - Store 1501142 and 1501144 have identical data. I would be curious to know more about why that is. My inital thought is that it's an error, so I would probably not use this as I think it may be unreliable, and lead to incorrect conclusions/analysis. As you can see below the avg total time and wait time for each store are identical.
 ![alt-text](https://i.imgur.com/gfXWVnz.png)
