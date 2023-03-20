@@ -6,14 +6,10 @@ import { styled } from '@mui/material/styles';
 import OrderTimeByHour from './OrderCountByHour';
 import DriveThruScatterplot from './DriveThruScatterplot'
 import AverageTotalTimeByStoreIdChart from './AverageTotalTimeByStoreIdChart'
-import OrderPickupTimeChart from './OrderPickupTimeChart'
+import OrderPickupTimeScatterplot from './OrderPickupTimeScatterplot'
 import AverageWaitTimeByStoreIdChart from './AverageWaitTimeByStoreIdChart'
 
 interface DashboardProps {
-  data: {
-    hour: number;
-    count: number;
-  }[];
   toggleDrawer: () => void;
 }
 
@@ -32,7 +28,7 @@ const Section = styled(Paper)(({ theme }) => ({
   },
 }));
 
-const Dashboard = ({ data }: DashboardProps) => {
+const Dashboard = ({ toggleDrawer }: DashboardProps) => {
   return (
     <Root>
       <Grid container spacing={3}>
@@ -60,7 +56,12 @@ const Dashboard = ({ data }: DashboardProps) => {
         </Grid>
         <Grid item xs={12}>
           <Section>
-          <OrderTimeByHour data={data} />
+          <OrderTimeByHour />
+          </Section>
+        </Grid>
+        <Grid item xs={12}>
+          <Section>
+          <OrderPickupTimeScatterplot />
           </Section>
         </Grid>
       </Grid>

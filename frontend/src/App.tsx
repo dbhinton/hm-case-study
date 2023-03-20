@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import { getOrderCountByHour } from './utils/api';
 import { styled, List, ListItem, ListItemText, Link } from '@mui/material/';
@@ -64,16 +64,7 @@ const SideMenu = () => {
 };
 
 function App() {
-  const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await getOrderCountByHour();
-      setData(result);
-    };
-    fetchData();
-  }, []);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -86,7 +77,7 @@ function App() {
           <SideMenu />
           <AppContent>
             <Routes>
-              <Route path="/" element={<Dashboard data={data} toggleDrawer={toggleDrawer} />} />
+              <Route path="/" element={<Dashboard toggleDrawer={toggleDrawer} />} />
               <Route path="/table" element={<Table />} />
             </Routes>
           </AppContent>
