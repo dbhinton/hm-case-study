@@ -1,4 +1,4 @@
-# Hellometer Case Study
+# HM Case Study
 
 ## Summary
 This is a project that analyzes the data of the drive-thru orders for four restaurants of the same chain on a single day. The data is available in four separate .csv files.
