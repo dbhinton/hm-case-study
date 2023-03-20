@@ -47,6 +47,7 @@ Some of the things I noticed about the data was:
 - TypeScript
 - Material UI
 - Plotly
+- Docker
 
 
 
