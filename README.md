@@ -6,7 +6,7 @@ This is a project that analyzes the data of the drive-thru orders for four resta
 ## How to Run the Project
 ### Prequesites
 Ensure you have Docker installed.
-Download necessary csv's and save them somewhere you can find them.
+Download necessary csv's and save them in a convenient location.
 
 ### To run this project on your local machine, follow these steps:
 - Clone this repository to your local machine.
