@@ -1,8 +1,7 @@
 import React from 'react';
-import Paper from '@mui/material/Paper';
+import { Root, Section } from '../Layouts/DashboardLayout';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
 import OrderTimeByHour from './OrderCountByHour';
 import DriveThruScatterplot from './DriveThruScatterplot'
 import AverageTotalTimeByStoreIdChart from './AverageTotalTimeByStoreIdChart'
@@ -13,20 +12,6 @@ interface DashboardProps {
   toggleDrawer: () => void;
 }
 
-
-const Root = styled('div')({
-  flexGrow: 1,
-  padding: '16px',
-});
-
-const Section = styled(Paper)(({ theme }) => ({
-  padding: '16px',
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  '@media (max-width: 600px)': {
-    padding: '8px',
-  },
-}));
 
 const Dashboard = ({ toggleDrawer }: DashboardProps) => {
   return (

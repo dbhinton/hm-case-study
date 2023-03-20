@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
-import { getOrderCountByHour } from '../utils/api';
+import { getOrderCountByHour } from '../../utils/api';
 
 // Define functional component OrderCountByHour
 const OrderCountByHour = () => {
