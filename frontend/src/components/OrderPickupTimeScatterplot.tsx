@@ -34,10 +34,10 @@ const OrderPickupTimeScatterplot = () => {
         width: 800,
         height: 600,
         xaxis: {
-          title: 'Pickup Time',
+          title: 'Pickup Time (number of seconds)',
         },
         yaxis: {
-          title: 'Order Time',
+          title: 'Order Time (number of seconds)',
         },
         title: 'Order Time vs Pickup Time Scatterplot',
       }}
