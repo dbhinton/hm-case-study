@@ -40,7 +40,13 @@ Some of the things I noticed about the data was:
 - The Count of Orders by Hour chart shows that there is a high concentration of orders between 6AM and 9AM which tells me that a lot of people go to this restaurant before work. This insinuates to me that this place serves breakfast. I would be interested to know what days have the highest customer counts. 
 ![alt-text](https://i.imgur.com/JUVdwST.png)
 
-
+## Tech Used
+- Django Rest Framework
+- Python
+- React
+- TypeScript
+- Material UI
+- Plotly
 
 
 
