@@ -24,11 +24,11 @@ The project has the following functionality:
 ### DriveThruOrderView
 This view provides the following endpoints:
 
-__average_wait_time_by_store_id__: returns the average wait time for each store.
-__average_total_time_by_store_id__: returns the average total time for each store.
-__generate_drive_thru_scatterplot__: generates a scatter plot of arrival time vs total time for all orders.
-__generate_pickup_order_time_scatterplot__: generates a scatter plot of pickup time vs order time for all orders.
-__order_count_by_hour__: returns the count of orders by hour of arrival time.
+ - __average_wait_time_by_store_id__: returns the average wait time for each store.
+- __average_total_time_by_store_id__: returns the average total time for each store.
+- __generate_drive_thru_scatterplot__: generates a scatter plot of arrival time vs total time for all orders.
+- __generate_pickup_order_time_scatterplot__: generates a scatter plot of pickup time vs order time for all orders.
+- __order_count_by_hour__: returns the count of orders by hour of arrival time.
 
 
 ## Conclusion
