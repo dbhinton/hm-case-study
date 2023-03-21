@@ -20,7 +20,6 @@ const Dashboard = ({ toggleDrawer }: DashboardProps) => {
         <Grid item xs={12}>
           <Section>
             <Typography variant="h6">Drive-Thru Times</Typography>
-            {/* Add your Drive-Thru Times component here */}
           </Section>
         </Grid>
 

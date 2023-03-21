@@ -1,7 +1,12 @@
 import React from 'react';
 import { styled, List, ListItem, ListItemText, Link } from '@mui/material/';
 
-const SideMenu = () => {
+
+interface SideMenuProps {
+    toggleDrawer: () => void;
+  }
+
+const SideMenu = ({toggleDrawer}: SideMenuProps) => {
     return (
       <SideMenuContainer>
         <DrawerHeader>
@@ -14,7 +19,6 @@ const SideMenu = () => {
           <SideMenuItem button={false}>
             <Link href='/table'><SideMenuItemText primary="Raw Data" /></Link>
           </SideMenuItem>
-          {/* Add more menu items here */}
         </SideMenuList>
       </SideMenuContainer>
     );

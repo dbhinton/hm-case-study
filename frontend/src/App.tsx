@@ -17,7 +17,7 @@ function App() {
     <>
       <Router>
         <Root>
-          <SideMenu />
+          <SideMenu toggleDrawer={toggleDrawer}/>
           <AppContent>
             <Routes>
               <Route path="/" element={<Dashboard toggleDrawer={toggleDrawer} />} />
